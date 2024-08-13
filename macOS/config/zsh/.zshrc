@@ -37,7 +37,7 @@ alias x64="arch -x86_64 zsh"
 alias la="ls -a"
 
 ### format the display by $PATH
-alias path='echo $PATH | tr ":" "\n"'
+alias path='echo $PATH | tr ":" "\\n"'
 
 ### matlab
 alias matlab='/Applications/MATLAB_R2023a.app/bin/matlab -nodesktop'
@@ -47,9 +47,13 @@ alias matlab='/Applications/MATLAB_R2023a.app/bin/matlab -nodesktop'
 source ~/.tokens
 
 # ------ path processor ------
-path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
-path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
-path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
+path_append ()  { path_remove "$1"; export PATH="$PATH:$1"; }
+path_prepend () { path_remove "$1"; export PATH="$1:$PATH"; }
+path_remove ()  {
+    local new_path
+    new_path=$(echo -n "$PATH" | awk -v RS=: -v ORS=: '$0 != "'"$1"'"' | sed 's/:$//')
+    export PATH="$new_path"
+}
 
 # ------ other ------
 ### Google Cloud Platform
@@ -57,8 +61,8 @@ source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh
 source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 ### oh-my-posh's theme
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/atomic.omp.json)"
-# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/aliens.omp.json)"
+eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/atomic.omp.json")"
+# eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/aliens.omp.json")"
 
 ### perl
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
