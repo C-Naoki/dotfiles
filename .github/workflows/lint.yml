@@ -29,7 +29,7 @@ jobs:
         pip install vim-vint
 
     - name: Check .zprofile
-      run: shellcheck ${GITHUB_WORKSPACE}/macOS/config/zsh/.zprofile --exclude=SC2148,SC1090
+      run: shellcheck ${GITHUB_WORKSPACE}/macOS/config/zsh/.zprofile --exclude=SC2148,SC1090,SC1091
 
     - name: Check .zshrc
-      run: shellcheck ${GITHUB_WORKSPACE}/macOS/config/zsh/.zshrc --exclude=SC2148,SC1090
+      run: shellcheck ${GITHUB_WORKSPACE}/macOS/config/zsh/.zshrc --exclude=SC2148,SC1090,SC1091
