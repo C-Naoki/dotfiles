@@ -23,6 +23,7 @@ setopt auto_cd
 ### delete the same command in the history
 typeset -U path PATH
 export PATH
+echo "$path" > /dev/null
 
 # ------ alias ------
 ### Add color to file listin
@@ -45,7 +46,9 @@ alias matlab='/Applications/MATLAB_R2023a.app/bin/matlab -nodesktop'
 
 # ------ token ------
 ### github
-source ~/.tokens
+if [ -f ~/.tokens ]; then
+  source "$HOME/.tokens"
+fi
 
 # ------ path processor ------
 path_append ()  { path_remove "$1"; export PATH="$PATH:$1"; }
@@ -74,4 +77,4 @@ eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/atomic.
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 # export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-source ~/shell/pyclone.sh
+source "$HOME/macOS/local/bin/pyclone/pyclone.sh"
