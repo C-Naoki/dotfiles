@@ -1,14 +1,4 @@
 # ------ environment variables (export) ------
-### dotfiles directory
-export DOTFILES="$HOME/dev/git/dotfiles"
-
-### zsh root directory
-export ZDOTDIR="$DOTFILES/config/zsh"
-export XDG_DATA_HOME="$DOTFILES/local/share/"
-export XDG_CONFIG_HOME="$DOTFILES/config/"
-export XDG_STATE_HOME="$DOTFILES/local/state/"
-export XDG_CACHE_HOME="$DOTFILES/cache/"
-
 ### colorize the terminal
 export TERM=xterm-color
 
@@ -31,7 +21,7 @@ eval "$(pyenv init -)"
 # export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 ### node
-export NODE_OPTIONS='--openssl-legacy-provider'
+export NODE_OPTIONS="--openssl-legacy-provider"
 
 ### go
 export GOPATH="$HOME/go"
