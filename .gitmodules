@@ -1,0 +1,3 @@
+[submodule "macOS/local/bin/pyclone"]
+	path = macOS/local/bin/pyclone
+	url = https://github.com/C-Naoki/pyclone
