@@ -43,3 +43,6 @@ export PATH=$PATH:/usr/local/bin/graphviz
 ### Rscript
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
+
+### Python
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
