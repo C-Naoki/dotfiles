@@ -36,3 +36,41 @@ export LC_ALL=ja_JP.UTF-8
 
 ### Python
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
+
+# ------ history ------
+### number of history lines to keep in memory
+export HISTSIZE=1000
+
+### number of history lines to keep in history file
+export SAVEHIST=100000
+export HISTFILESIZE=100000
+
+### ignore duplicate commands
+setopt hist_ignore_dups
+
+### record start and end times of commands
+setopt EXTENDED_HISTORY
+
+### delete older duplicate history entries
+setopt hist_ignore_all_dups
+
+### delete commands that begin with a space from history
+setopt hist_ignore_space
+
+### ヒストリを呼び出してから実行する間に一旦編集可能
+setopt hist_verify
+
+### delete extra spaces
+setopt hist_reduce_blanks
+
+### ignore commands that match previous one
+setopt hist_save_no_dups
+
+### not record history commands
+setopt hist_no_store
+
+### 保管時にヒストリを自動的に展開
+setopt hist_expand
+
+### history共有
+setopt share_history
