@@ -8,6 +8,7 @@ on:
 
 jobs:
   lint-check:
+    name: Lint
     runs-on: macos-latest
 
     steps:
