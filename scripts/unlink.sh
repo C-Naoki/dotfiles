@@ -2,10 +2,10 @@
 set -ue
 
 # set environment variables (if not set)
-DOTDIR=${DOTDIR:="$HOME"/.dotfiles}
+DOTDIR=${DOTDIR:="$HOME"/.dotfiles/macOS}
 
 # config
-for file in "$DOTDIR"/macOS/config/*/.[^.]*; do
+for file in "$DOTDIR"/config/*/.[^.]*; do
   # ignore .gitkeep
   if [ "`echo $file | grep '.gitkeep'`" ]; then
     continue
@@ -21,8 +21,7 @@ for file in "$DOTDIR"/macOS/config/*/.[^.]*; do
 done
 
 # history
-DOTDIR="$HOME"/.dotfiles
-for file in "$DOTDIR"/macOS/local/state/*/history; do
+for file in "$DOTDIR"/local/state/*/history; do
   # ignore .gitkeep
   if [ "`echo $file | grep '.gitkeep'`" ]; then
     continue
