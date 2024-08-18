@@ -5,6 +5,9 @@ export TERM=xterm-color
 ### homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
+### Brewfile
+export HOMEBREW_BUNDLE_FILE="$HOME/.dotfiles/macOS/config/homebrew/.Brewfile"
+
 ### git (homebrew)
 export PATH="$(brew --prefix git)/bin:$PATH"
 
