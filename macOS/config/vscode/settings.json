@@ -1,0 +1,348 @@
+{
+  // ---------- editor ----------
+  // フォントサイズ
+  "editor.fontSize": 14,
+  // 行の折り返し
+  "editor.wordWrap": "on",
+  // フォントファミリ
+  "editor.fontFamily": "CaskaydiaCove Nerd Font",
+  // 保存時にフォーマット化を行う
+  "editor.formatOnSave": false,
+  // エディタに制御文字を表示する
+  "editor.renderControlCharacters": false,
+  // Enterキーで候補を受理する
+  "editor.acceptSuggestionOnEnter": "off",
+  // ctrlキー+マウスホイールでフォントのズームを行う
+  "editor.mouseWheelZoom": true,
+  // 大きなファイルに対してエラーが発生
+  "editor.largeFileOptimizations": false,
+  // IntelliSenseにメソッド候補を表示
+  "editor.suggest.showMethods": true,
+  // 提案の結果をエディタでプレビュー
+  "editor.suggest.preview": true,
+  // snippetの表示位置
+  "editor.snippetSuggestions": "top",
+  // "editor.tabSize" と "editor.insertSpaces" を自動的に設定する
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+
+  // ---------- Python ----------
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}"
+  ],
+  // ---------- workbench ----------
+  "workbench.editorAssociations": {
+"*.ipynb": "jupyter-notebook"
+  },
+  // "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // ---------- notebook ----------
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.output.textLineLimit": 500,
+
+  // ---------- Language ----------
+  "[tex]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 2
+  },
+  "[latex]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 4,
+    "editor.formatOnType": true
+  },
+  "[java]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 4,
+    "editor.formatOnType": true
+  },
+  "[log]": {
+    "editor.tabSize": 1
+  },
+  "[markdown]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[shellscript]": {
+    "editor.tabSize": 4
+  },
+  // ---------- LaTeX Workshop ----------
+  // LaTeX
+  "latex-workshop.intellisense.package.enabled": true,
+  //補助配流を自動的に削除
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  //削除する補助ファイルを追加
+  "latex-workshop.latex.clean.fileTypes": [
+    // "*.aux",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.snm",
+    "*.nav",
+    "*.dvi",
+    "*.synctex.gz"
+  ],
+
+  //latexmkのビルドレシピ
+  "latex-workshop.latex.recipes": [
+    //bibTexを使用しない場合のレシピ
+    {
+      "name": "ptex2pdf (uplatex)*2",
+      "tools": [
+        "ptex2pdf (uplatex)",
+        "ptex2pdf (uplatex)"
+      ]
+    },
+    //bibTexを使用する場合のレシピ
+    {
+      "name": "ptex2pdf (uplatex) -> bibtex -> ptex2pdf (uplatex) *2",
+      "tools": [
+        "ptex2pdf (uplatex)",
+        "pbibtex",
+        "ptex2pdf (uplatex)",
+        "ptex2pdf (uplatex)"
+      ]
+    }
+  ],
+
+  //latexmkのビルドツール
+  "latex-workshop.latex.tools": [
+    {
+      "name": "ptex2pdf (uplatex)",
+      "command": "ptex2pdf",
+      "args": [
+        "-interaction=nonstopmode",
+        "-l",
+        "-u",
+        "-ot",
+        "-kanji=utf8 -synctex=1",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pbibtex",
+      "command": "pbibtex",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+
+  //これより下の設定は人それぞれかも
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.chktex.enabled": false,
+  "latex-workshop.latex.autoBuild.run": "never",
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 1,
+  "grammarly.files.include": [
+    "**/readme.md",
+    "**/README.md",
+    "**/*.txt",
+    "**/*.tex"
+  ],
+
+  // ----------git ----------
+  "git.enableSmartCommit": true,
+  "githubPullRequests.pullBranch": "never",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // ----------other ----------
+  "mysql.connections": [],
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDelete": false,
+  "json.schemas": [],
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "plantuml.commandArgs": [
+    "-Xmx2g", // Java起動時の最大ヒープサイズ設定
+    "-DPLANTUML_LIMIT_SIZE=16384" // 表示ダイアグラムの最大height&width設定
+  ],
+  "redhat.telemetry.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.eol": "\n",
+  "editor.guides.bracketPairs": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "editor.inlineSuggest.enabled": true,
+  "python.terminal.activateEnvironment": false,
+  "git.openRepositoryInParentFolders": "never",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.fontSize": 14,
+  "jupyter.askForKernelRestart": false,
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/.venv/lib/python3.10/site-packages"
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "git.ignoreRebaseWarning": true,
+  "files.trimTrailingWhitespace": true,
+  "mypy.dmypyExecutable": "${workspaceFolder}/.venv/bin/dmypy",
+  "mypy.enabled": false,
+  "deepl.apiKey": "",
+  "files.associations": {
+    "*.gs": "javascript"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "pylint.args": [
+    "C0103"
+  ],
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
+  "window.autoDetectHighContrast": false,
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "window.titleBarStyle": "custom",
+  "json.schemaDownload.enable": true,
+  "remote.SSH.connectTimeout": 60,
+  "remote.SSH.useLocalServer": false,
+  "remote.SSH.remotePlatform": {
+    "wakaba": "linux",
+    "kogane": "linux",
+    "wasabi": "linux",
+    "akane": "linux",
+    "akebono": "linux",
+    "yamabuki": "linux",
+    "yanagi": "linux",
+    "suzuran": "linux",
+    "kanaria": "linux",
+    "sora": "linux",
+    "asagi": "linux"
+  },
+  "diffEditor.maxComputationTime": 0,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "isort.check": true,
+  "editor.accessibilitySupport": "on",
+  "MATLAB.installPath": "/Applications/MATLAB_R2023a.app",
+  "files.exclude": {
+    "**/._.DS_Store": true
+  },
+  "gitlens.graph.minimap.enabled": false,
+  "accessibility.signals.lineHasError": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasFoldedArea": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  },
+  "accessibility.signals.terminalQuickFix": {
+    "sound": "off"
+  },
+  "accessibility.signals.onDebugBreak": {
+    "sound": "off"
+  },
+  "accessibility.signals.noInlayHints": {
+    "sound": "off"
+  },
+  "accessibility.signals.taskCompleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.taskFailed": {
+    "sound": "off"
+  },
+  "accessibility.signals.terminalCommandFailed": {
+    "sound": "off"
+  },
+  "accessibility.signals.notebookCellCompleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.notebookCellFailed": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineInserted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineDeleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineModified": {
+    "sound": "off"
+  },
+  "deepl.formality": "default",
+  "deepl.tagHandling": "off",
+  "deepl.splitSentences": "1",
+  "deepl.translationMode": "Replace",
+  "terminal.integrated.commandsToSkipShell": [
+    "github.copilot.terminal.suggestCommand",
+    "matlab.interrupt"
+  ],
+  "accessibility.signals.progress": {
+    "sound": "off"
+  },
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "matlab.mlintpath": "/Applications/MATLAB_R2023a.app/bin/maci64/mlint",
+  "markdown.extension.toc.levels": "2..6",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.settings.applyToAllProfiles": [
+    "workbench.colorCustomizations"
+  ],
+  "go.toolsManagement.autoUpdate": true
+}
