@@ -25,7 +25,7 @@ for file in "$DOTDIR"/macOS/local/state/*/history; do
   if [ "`echo $file | grep '.gitkeep'`" ]; then
     continue
   fi
-  # extract cliname
+  # make linkname
   tmp="${file%/*}"
   linkname=~/."${tmp##*/}"_history
   # create symlink
