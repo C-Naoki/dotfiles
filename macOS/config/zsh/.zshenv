@@ -5,6 +5,9 @@ export TERM=xterm-color
 ### homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
+### git (homebrew)
+export PATH="$(brew --prefix git)/bin:$PATH"
+
 ### latexmk
 export PATH="/usr/local/texlive/2022/bin/universal-darwin:$PATH"
 
