@@ -7,7 +7,7 @@ DOTDIR=${DOTDIR:="$HOME"/.dotfiles/macOS}
 # config
 for file in "$DOTDIR"/config/*/.[^.]*; do
   # ignore .gitkeep
-  if [ "`echo $file | grep '.gitkeep'`" ]; then
+  if [ "$(echo "$file" | grep '.gitkeep')" ]; then
     continue
   fi
   # make linkname
@@ -21,7 +21,7 @@ done
 # history
 for file in "$DOTDIR"/local/state/*/history; do
   # ignore .gitkeep
-  if [ "`echo $file | grep '.gitkeep'`" ]; then
+  if [ "$(echo "$file" | grep '.gitkeep')" ]; then
     continue
   fi
   # make linkname
