@@ -1,0 +1,42 @@
+# ==== Commit Messages ====
+
+# ==== Format ====
+# :emoji: prefix: Subject
+
+# Commit body (Why)
+
+# ==== Emoji ====
+# 🎉 :tada: initial commit (feat)
+# ✨ :sparkles: introduce new features (feat)
+# 📝 :memo: add or update documantations (docs)
+# 🚀 :rocket: improve performance (feat)
+# 🎨 :art: improve structure / format of the code (style)
+# 💄 :lipstick: add or update the UI and style files (style)
+# ♻️ :recycle: refactoring (refactor)
+# 🐛 :bug: fix a bug (fix)
+# 🚑 :ambulance: critical hotfix (fix)
+# 👕 :shirt: fix lint error and code styles (fix)
+# 🔥 :fire: remove files / directory (remove)
+# 🚿 :shower: remove unnecessary features (remove/refactor)
+# 👷 :construction_worker: add or update CI build system (test)
+# 💚 :green_heart: fix CI build (test)
+# 🔧 :wrench: add or update configuration files (chore)
+# ⬆️ :arrow_up: update packages versions (chore)
+# 📈 :chart_with_upwards_trend: add or update analytics or track code (analysis)
+# 🩹 :adhesive_bandage: simple fix for a non-critical issue (chore)
+# 🍱 :bento: add or update assets (feat/fix)
+# 💡 :bulb: add or update comments in source code (docs)
+# 🚚 :truck: move or rename resources (chore/style)
+# 🚧 :construction: work in progress (feat/fix/refactor)
+
+
+# ==== Prefix ====
+# fix           : bug fix, hotfix if it's critical
+# feat          : new feature (feat is for short feature)
+# change        : changes source codes due to requirements change
+# docs          : changes in documentation
+# style         : changes in code style (e.g., space, semi-colon, line breaks, etc.)
+# refactor      : refactoring production code
+# test          : add or fix test codes
+# chore         : changes in build process or auxiliary tools
+# analysis      : changes in data analysis
