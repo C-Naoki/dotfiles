@@ -13,7 +13,6 @@
 ### consider codes after # as comments
 setopt interactive_comments
 
-# ----- useful -----
 ### change directory using only the name of a directory
 setopt auto_cd
 
@@ -47,7 +46,7 @@ alias matlab='/Applications/MATLAB_R2023a.app/bin/matlab -nodesktop'
 # ------ token ------
 ### github
 if [ -f ~/.tokens ]; then
-  source "$HOME/.tokens"
+    source "$HOME/.tokens"
 fi
 
 # ------ path processor ------
@@ -77,4 +76,4 @@ eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/atomic.
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 # export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-source "$HOME/macOS/local/bin/pyclone/pyclone.sh"
+source "$HOME/.dotfiles/macOS/local/bin/pyclone/pyclone.sh"
