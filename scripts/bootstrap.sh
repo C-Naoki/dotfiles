@@ -45,9 +45,9 @@ if [ ! -d ${DOTDIR} ]; then
     cd ${DOTDIR}
 
     # set up dotfiles
-    sh ~/scripts/install-brew.sh
-    sh ~/scripts/set-history.sh
-    sh ~/scripts/symlink.sh
+    sh $DOTDIR/scripts/install-brew.sh
+    sh $DOTDIR/scripts/set-history.sh
+    sh $DOTDIR/scripts/symlink.sh
 else
     echo "dotfiles already exists"
     exit 1
