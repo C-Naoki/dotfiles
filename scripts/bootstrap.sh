@@ -46,11 +46,11 @@ if [ ! -d ${DOTDIR} ]; then
 
     if [ $(uname) == "Darwin" ]; then
         # set up dotfiles
-        sh ../scripts/install-brew.sh
-        sh ../scripts/set-history.sh
-        sh ../scripts/symlink.sh
+        source ../scripts/install-brew.sh
+        source ../scripts/set-history.sh
+        source ../scripts/symlink.sh
     fi
-    sh ../scripts/display-finish.sh
+    source ../scripts/display-finish.sh
 else
     echo "dotfiles already exists"
     exit 1
