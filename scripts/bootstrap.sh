@@ -16,7 +16,6 @@ if [ ! -d ${DOTDIR} ]; then
     # check your PC's OS
     if [ $(uname) == "Darwin" ]; then
         DOTDIR="$DOTDIR/macOS"
-        sh ${DOTDIR}/config/homebrew/install.sh
     elif [ $(uname) == "Linux" ]; then
         DOTDIR="$DOTDIR/linux"
     else
@@ -46,6 +45,7 @@ if [ ! -d ${DOTDIR} ]; then
     cd ${DOTDIR}
 
     # set up dotfiles
+    sh ~/scripts/install-brew.sh
     sh ~/scripts/set-history.sh
     sh ~/scripts/symlink.sh
 else
