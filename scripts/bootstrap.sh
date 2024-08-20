@@ -15,7 +15,7 @@ export DOTDIR="$HOME/.dotfiles"
 if [ ! -d ${DOTDIR} ]; then
     # download dotfiles and move to the dotfiles directory
     if has "git"; then
-        git clone https://github.com/C-Naoki/dotfiles.git ${DOTDIR}
+        git clone --recurse-submodules https://github.com/C-Naoki/dotfiles.git ${DOTDIR}
     elif has "curl" || has "wget"; then
         TARBALL="https://github.com/C-Naoki/dotfiles/archive/master.tar.gz"
         if has "curl"; then
