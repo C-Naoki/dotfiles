@@ -7,4 +7,4 @@ else
 fi
 
 # Install Homebrew packages all at once
-brew bundle -v --file=.Brewfile
+brew bundle -v --file=../.Brewfile
