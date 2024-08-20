@@ -21,7 +21,7 @@ done
 # vscode
 if [ -f "$DOTDIR"/config/vscode/settings.json ]; then
     # create symlink
-    ln -sfn "$DOTDIR"/config/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+    ln -sfn "$DOTDIR"/config/vscode/settings.json "$HOME"/Library/Application\ Support/Code/User/settings.json
     echo "create symlink: '$DOTDIR/config/vscode/settings.json' -> '$HOME/Library/Application Support/Code/User/settings.json'"
 fi
 
