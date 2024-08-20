@@ -11,6 +11,8 @@ echo "🚀 Starting the bootstrap process..."
 # dotfiles directory
 export DOTDIR="$HOME/.dotfiles"
 
+# check if dotfiles exists
+if [ ! -d ${DOTDIR} ]; then
     # download dotfiles and move to the dotfiles directory
     if has "git"; then
         git clone https://github.com/C-Naoki/dotfiles.git ${DOTDIR}
@@ -29,8 +31,6 @@ export DOTDIR="$HOME/.dotfiles"
         exit 1
     fi
 
-# check if dotfiles exists
-if [ ! -d ${DOTDIR} ]; then
     # check your PC's OS
     if [ $(uname) == "Darwin" ]; then
         DOTDIR="$DOTDIR/macOS"
