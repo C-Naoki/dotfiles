@@ -41,7 +41,7 @@ brew "python@3.10"
 brew "node@14"
 brew "node@18"
 brew "nodebrew"
-brew "oh-my-posh", link: false
+brew "oh-my-posh"
 brew "openjdk"
 brew "openvino"
 brew "php"
