@@ -50,6 +50,7 @@ if [ ! -d ${DOTDIR} ]; then
         sh ../scripts/set-history.sh
         sh ../scripts/symlink.sh
     fi
+    sh ../scripts/display-finish.sh
 else
     echo "dotfiles already exists"
     exit 1
