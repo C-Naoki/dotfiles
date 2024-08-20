@@ -20,6 +20,12 @@ for file in "$DOTDIR"/config/*/.[^.]*; do
     echo "delete symlink: '$linkname'"
 done
 
+# vscode
+if [ -L "$HOME"/Library/Application\ Support/Code/User/settings.json ]; then
+    unlink "$HOME"/Library/Application\ Support/Code/User/settings.json
+    echo "delete symlink: '$HOME/Library/Application Support/Code/User/settings.json'"
+fi
+
 # history
 for file in "$DOTDIR"/local/state/*/history; do
     # ignore .gitkeep
