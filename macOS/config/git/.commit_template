@@ -2,7 +2,7 @@
 
 # ==== Format ====
 # :emoji: prefix: Subject
-
+#
 # Commit body (Why)
 
 # ==== Emoji ====
@@ -28,7 +28,6 @@
 # 💡 :bulb: add or update comments in source code (docs)
 # 🚚 :truck: move or rename resources (chore/style)
 # 🚧 :construction: work in progress (feat/fix/refactor)
-
 
 # ==== Prefix ====
 # fix           : bug fix, hotfix if it's critical
