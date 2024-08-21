@@ -46,6 +46,7 @@ if [ ! -d ${DOTDIR} ]; then
 
     if [ $(uname) == "Darwin" ]; then
         # set up dotfiles
+        source ../scripts/backup.sh
         source ../scripts/install-brew.sh
         source ../scripts/set-history.sh
         source ../scripts/symlink.sh
