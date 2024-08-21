@@ -1,3 +1,6 @@
+# set environment variable for Homebrew
+PATH="/opt/homebrew/bin:$PATH"
+
 # Install Homebrew
 if ! type brew > /dev/null 2>&1; then
     echo "Install Homebrew..."
