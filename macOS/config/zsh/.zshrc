@@ -25,17 +25,44 @@ export PATH
 echo "$path" > /dev/null
 
 # ------ alias ------
-### Add color to file listin
+### ls
 alias ls="ls -GF"
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -la"
+
+### cd
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias dg="cd ~/dev/git"
+
+### homebrew
+alias bi="brew install"
+alias bui="brew uninstall"
+alias bl="brew list"
+
+### git
+alias g="git"
+alias ga="git add"
+alias gd="git diff"
+alias gs="git status"
+alias gp="git push"
+alias gb="git branch"
+alias gst="git status"
+alias gco="git checkout"
+alias gf="git fetch"
+alias gc="git commit"
+
+### dotfiles
+alias dot='~/.dotfiles'
 
 ### using apple silicon
 alias a64="arch -arm64 zsh"
 
 ### using intel silicon
 alias x64="arch -x86_64 zsh"
-
-### display all files including hidden files
-alias la="ls -a"
 
 ### format the display by $PATH
 alias path='echo $PATH | tr ":" "\\n"'
