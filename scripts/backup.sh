@@ -5,7 +5,7 @@ set -ue
 DOTDIR=${DOTDIR:="$HOME"/.dotfiles/macOS}
 
 # make backup directory
-BACKUPDIR="$DOTDIR"/backup
+BACKUPDIR="$DOTDIR"/local/share/dotfiles/backups
 mkdir -p $BACKUPDIR
 
 # config
