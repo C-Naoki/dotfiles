@@ -3,4 +3,99 @@
 ![](https://github.com/C-Naoki/dotfiles/workflows/macOS/badge.svg)
 ![](https://github.com/C-Naoki/dotfiles/workflows/Lint/badge.svg)
 
-🚧 UNDER CONSTRUCTION
+- [⚙️ Installation](#️-installation)
+- [🌳 Directory structure](#-directory-structure)
+- [🙋‍♂️ Support](#️-support)
+
+## ⚙️ Installation
+You can set up dotfiles in your local environment with **JUST ONE** command below.
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/C-Naoki/dotfiles/main/scripts/bootstrap.sh)"
+```
+
+## 🌳 Directory structure
+Directory structure is inspired by [The XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/index.html).
+The main directories and files are as follows:
+- `scripts/`: shell scripts for setting up dotfiles
+- `macOS/`: macOS specific settings
+- `linux/`: Linux specific settings (🚧 UNDER CONSTRUCTION)
+- `config/`: user-specific configuration files
+
+<details>
+<summary>&thinsp;See details (Last updated on Aug 23, 2024)</summary>
+
+```bash
+.
+├── .Brewfile
+├── .Brewfile.lock.json
+├── .editorconfig
+├── .github
+│   └── workflows
+│       ├── lint.yml
+│       ├── linux.yml
+│       └── macOS.yml
+├── .gitignore
+├── .gitmodules
+├── LICENSE
+├── README.md
+├── linux
+│   └── zsh_alias
+├── macOS
+│   ├── backup
+│   ├── cache
+│   │   └─── .gitkeep
+│   ├── config
+│   │   ├── bash
+│   │   │   ├── .bash_profile
+│   │   │   └── .bashrc
+│   │   ├── git
+│   │   │   ├── .commit_template
+│   │   │   ├── .gitconfig
+│   │   │   └── .gitignore_global
+│   │   ├── python
+│   │   │   └── .pythonrc.py
+│   │   ├── vscode
+│   │   │   └── settings.json
+│   │   ├── yarn
+│   │   │   └── .yarnrc
+│   │   └── zsh
+│   │       ├── .zprofile
+│   │       ├── .zshenv
+│   │       └── .zshrc
+│   └── local
+│       ├── bin
+│       │   └── pyclone
+│       │       ├── .git
+│       │       ├── LICENSE
+│       │       ├── README.md
+│       │       └── pyclone.sh
+│       ├── share
+│       └── state
+│           ├── bash
+│           │   ├── .gitkeep
+│           │   └── history
+│           ├── mysql
+│           │   ├── .gitkeep
+│           │   └── history
+│           ├── python
+│           │   ├── .gitkeep
+│           │   └── history
+│           └── zsh
+│               ├── .gitkeep
+│               └── history
+└── scripts
+    ├── backup.sh
+    ├── bootstrap.sh
+    ├── cleanup.sh
+    ├── defaults.sh
+    ├── display-finish.sh
+    ├── install-brew.sh
+    ├── set-history.sh
+    ├── symlink.sh
+    └── unlink.sh
+```
+</details>
+
+## 🙋‍♂️ Support
+💙 If you like this dotfiles, give it a ⭐ and share it with friends!
+💥 For questions or issues, feel free to open [an issue on our GitHub repository](https://github.com/C-Naoki/dotfiles/issues). We appreciate your feedback and look forward to hearing from you!
