@@ -6,7 +6,7 @@
 - [⚙️ Installation](#️-installation)
 - [🌳 Directory structure](#-directory-structure)
 - [🙋‍♂️ Support](#️-support)
-- [✉️  Contact](#️-contact)
+- [✉️ Contact](#️-contact)
 
 ## ⚙️ Installation
 You can set up dotfiles in your local environment with **JUST ONE** command below.
@@ -100,5 +100,5 @@ The main directories and files are as follows:
 ## 🙋‍♂️ Support
 💙 If you like this dotfiles, give it a ⭐ and share it with friends!
 
-## ✉️ &thinsp;Contact
+## ✉️ Contact
 💥 For questions or issues, feel free to open an [issue](https://github.com/C-Naoki/dotfiles/issues). I appreciate your feedback and look forward to hearing from you!
