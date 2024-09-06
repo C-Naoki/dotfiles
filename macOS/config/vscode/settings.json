@@ -273,7 +273,7 @@
   "typescript.updateImportsOnFileMove.enabled": "never",
   "isort.check": true,
   "editor.accessibilitySupport": "on",
-  "MATLAB.installPath": "/Applications/MATLAB_R2023a.app",
+  "MATLAB.installPath": "/Applications/MATLAB_R2024a.app",
   "files.exclude": {
     "**/._.DS_Store": true
   },
