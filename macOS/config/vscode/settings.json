@@ -73,10 +73,11 @@
   },
   "[markdown]": {
     "editor.tabSize": 4,
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "diffEditor.ignoreTrimWhitespace": false
   },
   "[shellscript]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 2
   },
   // ---------- LaTeX Workshop ----------
   // LaTeX
@@ -344,5 +345,8 @@
   "workbench.settings.applyToAllProfiles": [
     "workbench.colorCustomizations"
   ],
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "autoDocstring.startOnNewLine": true,
+  "git.path": "/usr/local/bin/git",
+  "application.shellEnvironmentResolutionTimeout": 30
 }
