@@ -3,12 +3,14 @@
 ![](https://github.com/C-Naoki/dotfiles/workflows/macOS/badge.svg)
 ![](https://github.com/C-Naoki/dotfiles/workflows/Lint/badge.svg)
 
-- [⚙️ Installation](#️-installation)
+- [📘 Usage](#-usage)
+  - [⚙️ Install](#️-install)
 - [🌳 Directory structure](#-directory-structure)
 - [🙋‍♂️ Support](#️-support)
 - [✉️ Contact](#️-contact)
 
-## ⚙️ Installation
+## 📘 Usage
+### ⚙️ Install
 You can set up dotfiles in your local environment with **JUST ONE** command below.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/C-Naoki/dotfiles/main/scripts/bootstrap.sh)"
@@ -23,7 +25,7 @@ The main directories and files are as follows:
 - `config/`: user-specific configuration files
 
 <details>
-<summary>&thinsp;See details (Last updated on Aug 23, 2024)</summary>
+<summary>&thinsp;See details (Last updated on Jan 11, 2025)</summary>
 
 ```bash
 .
@@ -55,6 +57,8 @@ The main directories and files are as follows:
 │   │   │   └── .gitignore_global
 │   │   ├── python
 │   │   │   └── .pythonrc.py
+│   │   ├── latex
+│   │   │   └── .latexmkrc
 │   │   ├── vscode
 │   │   │   └── settings.json
 │   │   ├── yarn
@@ -101,4 +105,4 @@ The main directories and files are as follows:
 💙 If you like this dotfiles, give it a ⭐ and share it with friends!
 
 ## ✉️ Contact
-💥 For questions or issues, feel free to open an [issue](https://github.com/C-Naoki/dotfiles/issues). I appreciate your feedback and look forward to hearing from you!
+💥 If you have any questions or encounter issues, feel free to open an [issue](https://github.com/C-Naoki/dotfiles/issues). I appreciate your feedback and look forward to hearing from you!
