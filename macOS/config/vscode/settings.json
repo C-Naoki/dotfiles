@@ -2,6 +2,8 @@
   // ---------- editor ----------
   // フォントサイズ
   "editor.fontSize": 14,
+  // ウィンドウサイズ
+  "window.zoomLevel": 0,
   // 行の折り返し
   "editor.wordWrap": "on",
   // フォントファミリ
@@ -24,6 +26,8 @@
   "editor.snippetSuggestions": "top",
   // "editor.tabSize" と "editor.insertSpaces" を自動的に設定する
   "editor.detectIndentation": false,
+  // ミニバー（右側）を非表示
+  "editor.minimap.enabled": false,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
@@ -55,6 +59,11 @@
     "editor.tabSize": 2
   },
   "[latex]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.tabSize": 2
   },
@@ -80,13 +89,20 @@
     "editor.tabSize": 2
   },
   // ---------- LaTeX Workshop ----------
-  // LaTeX
+  // ビルドレシピのデフォルト
+  "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
+  // コードの補完を有効にする
   "latex-workshop.intellisense.package.enabled": true,
-  //補助配流を自動的に削除
+  // 補助配流を自動的に削除
   "latex-workshop.latex.autoClean.run": "onBuilt",
-  //削除する補助ファイルを追加
+  // 補助ファイルの削除方法
+  "latex-workshop.latex.clean.method": "glob",
+  // ダークモードへ変更
+  "latex-workshop.view.pdf.invert": 0.93,
+  // 削除する補助ファイルを追加
   "latex-workshop.latex.clean.fileTypes": [
-    // "*.aux",
+    "*.aux",
+    "*.bbl",
     "*.blg",
     "*.idx",
     "*.ind",
@@ -107,66 +123,210 @@
     "*.snm",
     "*.nav",
     "*.dvi",
-    "*.synctex.gz"
+    "*.synctex.gz",
+    "*.bcf",
+    "*.run.xml",
   ],
 
-  //latexmkのビルドレシピ
+  // latexmkのビルドレシピ
   "latex-workshop.latex.recipes": [
-    //bibTexを使用しない場合のレシピ
     {
-      "name": "ptex2pdf (uplatex)*2",
+      "name": "latexmk",
       "tools": [
-        "ptex2pdf (uplatex)",
-        "ptex2pdf (uplatex)"
+        "latexmk"
       ]
     },
-    //bibTexを使用する場合のレシピ
     {
-      "name": "ptex2pdf (uplatex) -> bibtex -> ptex2pdf (uplatex) *2",
+      "name": "latexmk (latexmkrc)",
       "tools": [
-        "ptex2pdf (uplatex)",
-        "pbibtex",
-        "ptex2pdf (uplatex)",
-        "ptex2pdf (uplatex)"
+        "latexmk_rconly"
+      ]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "tools": [
+        "lualatexmk"
+      ]
+    },
+    {
+      "name": "latexmk (xelatex)",
+      "tools": [
+        "xelatexmk"
+      ]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex * 2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "Compile Rnw files",
+      "tools": [
+        "rnw2tex",
+        "latexmk"
+      ]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": [
+        "jnw2tex",
+        "latexmk"
+      ]
+    },
+    {
+      "name": "Compile Pnw files",
+      "tools": [
+        "pnw2tex",
+        "latexmk"
+      ]
+    },
+    {
+      "name": "tectonic",
+      "tools": [
+        "tectonic"
       ]
     }
   ],
 
-  //latexmkのビルドツール
+  // latexmkのビルドツール
   "latex-workshop.latex.tools": [
     {
-      "name": "ptex2pdf (uplatex)",
-      "command": "ptex2pdf",
+      "name": "latexmk",
+      "command": "latexmk",
       "args": [
+        "-synctex=1",
         "-interaction=nonstopmode",
-        "-l",
-        "-u",
-        "-ot",
-        "-kanji=utf8 -synctex=1",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
         "%DOC%"
-      ]
+      ],
+      "env": {}
     },
     {
-      "name": "pbibtex",
-      "command": "pbibtex",
+      "name": "lualatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "latexmk_rconly",
+      "command": "latexmk",
+      "args": [
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
       "args": [
         "%DOCFILE%"
-      ]
+      ],
+      "env": {}
+    },
+    {
+      "name": "rnw2tex",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+      ],
+      "env": {}
+    },
+    {
+      "name": "jnw2tex",
+      "command": "julia",
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+      ],
+      "env": {}
+    },
+    {
+      "name": "jnw2texminted",
+      "command": "julia",
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pnw2tex",
+      "command": "pweave",
+      "args": [
+        "-f",
+        "tex",
+        "%DOC_EXT%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pnw2texminted",
+      "command": "pweave",
+      "args": [
+        "-f",
+        "texminted",
+        "%DOC_EXT%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "tectonic",
+      "command": "tectonic",
+      "args": [
+        "--synctex",
+        "--keep-logs",
+        "%DOC%.tex"
+      ],
+      "env": {}
     }
   ],
 
-  //これより下の設定は人それぞれかも
+  // これより下の設定は人それぞれかも
+  // PDFビューアをVSCodeのタブで開く（他：external, browser, none）
+  // (Tips: PDFの表示は command + option + V)
   "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.chktex.enabled": false,
+  // ChkTexを有効にする
+  "latex-workshop.chktex.enabled": true,
+  // ファイル保存をビルドのトリガーとする（他：onFileChange, never）
   "latex-workshop.latex.autoBuild.run": "never",
-  "editor.minimap.enabled": false,
-  "window.zoomLevel": 1,
-  "grammarly.files.include": [
-    "**/readme.md",
-    "**/README.md",
-    "**/*.txt",
-    "**/*.tex"
-  ],
 
   // ----------git ----------
   "git.enableSmartCommit": true,
@@ -276,7 +436,8 @@
   "editor.accessibilitySupport": "on",
   "MATLAB.installPath": "/Applications/MATLAB_R2024a.app",
   "files.exclude": {
-    "**/._.DS_Store": true
+    "**/._.DS_Store": true,
+    "**/._**": true
   },
   "gitlens.graph.minimap.enabled": false,
   "accessibility.signals.lineHasError": {
@@ -335,7 +496,6 @@
   "accessibility.signals.progress": {
     "sound": "off"
   },
-  "latex-workshop.latex.recipe.default": "lastUsed",
   "github.copilot.editor.enableAutoCompletions": true,
   "matlab.mlintpath": "/Applications/MATLAB_R2023a.app/bin/maci64/mlint",
   "markdown.extension.toc.levels": "2..6",
@@ -348,5 +508,8 @@
   "go.toolsManagement.autoUpdate": true,
   "autoDocstring.startOnNewLine": true,
   "git.path": "/usr/local/bin/git",
-  "application.shellEnvironmentResolutionTimeout": 30
+  "application.shellEnvironmentResolutionTimeout": 30,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "autoDocstring.docstringFormat": "numpy",
 }
