@@ -4,10 +4,8 @@
   "editor.fontSize": 14,
   // ウィンドウサイズ
   "window.zoomLevel": 0,
-  // 行の折り返し
-  "editor.wordWrap": "on",
   // フォントファミリ
-  "editor.fontFamily": "CaskaydiaCove Nerd Font",
+  "editor.fontFamily": "CaskaydiaCove Nerd Font,Meiryo UI",
   // 保存時にフォーマット化を行う
   "editor.formatOnSave": false,
   // エディタに制御文字を表示する
@@ -41,7 +39,7 @@
   ],
   // ---------- workbench ----------
   "workbench.editorAssociations": {
-"*.ipynb": "jupyter-notebook"
+    "*.ipynb": "jupyter-notebook"
   },
   // "workbench.colorTheme": "GitHub Dark Default",
   "workbench.iconTheme": "material-icon-theme",
@@ -69,6 +67,14 @@
   },
   "[python]": {
     "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+        // Fix codes when saving
+        "source.fixAll.ruff": "explicit",
+        // Organize imports order when saving
+        "source.organizeImports.ruff": "explicit"
+    },
+    "editor.formatOnSave": true,
     "editor.tabSize": 4,
     "editor.formatOnType": true
   },
@@ -102,6 +108,7 @@
   // 削除する補助ファイルを追加
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux",
+    "**/*.aux",
     "*.bbl",
     "*.blg",
     "*.idx",
@@ -126,6 +133,9 @@
     "*.synctex.gz",
     "*.bcf",
     "*.run.xml",
+    "*.spl",
+    "*.xdv",
+    "*.xcp"
   ],
 
   // latexmkのビルドレシピ
@@ -327,6 +337,8 @@
   "latex-workshop.chktex.enabled": true,
   // ファイル保存をビルドのトリガーとする（他：onFileChange, never）
   "latex-workshop.latex.autoBuild.run": "never",
+  // TexCount のパスを設定
+  "latex-utilities.texcount.path": "/opt/homebrew/bin/texcount",
 
   // ----------git ----------
   "git.enableSmartCommit": true,
@@ -376,6 +388,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "files.eol": "\n",
   "editor.guides.bracketPairs": true,
+  "terminal.integrated.shellIntegration.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "editor.inlineSuggest.enabled": true,
   "python.terminal.activateEnvironment": false,
@@ -512,4 +525,7 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "bash",
   "autoDocstring.docstringFormat": "numpy",
+  "editor.wordWrap": "on",
+  "r.rpath.mac": "/opt/homebrew/bin/R",
+  "r.rterm.mac": "/opt/homebrew/bin/R",
 }
