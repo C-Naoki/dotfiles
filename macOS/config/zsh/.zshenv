@@ -9,7 +9,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_BUNDLE_FILE="$HOME/.dotfiles/.Brewfile"
 
 ### git (homebrew)
-export PATH="$(brew --prefix git)/bin:$PATH"
+export PATH="$(brew --prefix)/bin/git:$PATH"
 
 ### latexmk
 export PATH="/usr/local/texlive/2022/bin/universal-darwin:$PATH"
@@ -20,10 +20,11 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 ### pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 ### nodebrew
+### since switch from nodebrew to volta, not using it now.
 # export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 ### node
@@ -34,7 +35,7 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 ### graphviz
-export PATH=$PATH:/usr/local/bin/graphviz
+export PATH=/opt/homebrew/opt/graphviz/bin:$PATH
 
 ### Rscript
 export LANG=ja_JP.UTF-8
@@ -42,6 +43,9 @@ export LC_ALL=ja_JP.UTF-8
 
 ### Python
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
+
+### crontab
+export EDITOR=/usr/bin/vim
 
 # ------ history ------
 ### number of history lines to keep in memory

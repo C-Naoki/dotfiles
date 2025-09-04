@@ -16,6 +16,10 @@ setopt interactive_comments
 ### change directory using only the name of a directory
 setopt auto_cd
 
+### remove `--openssl-legacy-provider` option of Node.js
+### If you use Node.js 17 or later, you may need to add this option.
+unset NODE_OPTIONS
+
 ### Match lowercase letters to uppercase letters in completion
 # zstyle ‘:completion:*’ matcher-list ‘m:{a-z}={A-Z}’
 
@@ -56,7 +60,7 @@ alias gf="git fetch"
 alias gc="git commit"
 
 ### dotfiles
-alias dot='~/.dotfiles'
+alias dotfiles='~/.dotfiles'
 
 ### using apple silicon
 alias a64="arch -arm64 zsh"
@@ -104,3 +108,10 @@ eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/atomic.
 # export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 source "$HOME/.dotfiles/macOS/local/bin/pyclone/pyclone.sh"
+source "$HOME/.dotfiles/macOS/local/bin/remove_trash/trash.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
