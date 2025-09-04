@@ -35,4 +35,4 @@
 	defaultBranch = main
 
 [http]
-  postBuffer = 15728640
+  postBuffer = 524288000
