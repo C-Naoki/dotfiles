@@ -37,6 +37,12 @@
   "python.autoComplete.extraPaths": [
     "${workspaceFolder}"
   ],
+  "python.languageServer": "Default",
+  "python.terminal.activateEnvironment": false,
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/.venv/lib/python3.*/site-packages"
+  ],
   // ---------- workbench ----------
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -78,6 +84,12 @@
     "editor.tabSize": 4,
     "editor.formatOnType": true
   },
+  "[r]": {
+    "r.rpath.mac": "/opt/homebrew/bin/R",
+    "r.rterm.mac": "/opt/homebrew/bin/R",
+    "r.lsp.formatting_style": "styler",
+    "editor.formatOnSave": true
+  },
   "[java]": {
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.tabSize": 4,
@@ -89,6 +101,15 @@
   "[markdown]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+    "editor.rulers": [40, 80, 120, 160, 200],
+    "editor.wrappingStrategy": "simple",
+    "editor.wordBreak": "normal",
+    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?゠・，、；：！？．。‘’“”（）｟｠［］〚〛〔〕｛｝〈〉《》「」『』【】〖〗〝〟がてでとにのはへもやを",
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "editor.bracketPairColorization.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false
   },
   "[shellscript]": {
@@ -108,7 +129,6 @@
   // 削除する補助ファイルを追加
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux",
-    "**/*.aux",
     "*.bbl",
     "*.blg",
     "*.idx",
@@ -391,17 +411,12 @@
   "terminal.integrated.shellIntegration.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "editor.inlineSuggest.enabled": true,
-  "python.terminal.activateEnvironment": false,
   "git.openRepositoryInParentFolders": "never",
   "liveServer.settings.donotShowInfoMsg": true,
   "editor.tabSize": 2,
   "files.autoSave": "afterDelay",
   "terminal.integrated.fontSize": 14,
   "jupyter.askForKernelRestart": false,
-  "python.analysis.extraPaths": [
-    "${workspaceFolder}",
-    "${workspaceFolder}/.venv/lib/python3.10/site-packages"
-  ],
   "github.copilot.enable": {
     "*": true,
     "plaintext": true,
@@ -526,6 +541,16 @@
   "terminal.integrated.defaultProfile.linux": "bash",
   "autoDocstring.docstringFormat": "numpy",
   "editor.wordWrap": "on",
-  "r.rpath.mac": "/opt/homebrew/bin/R",
-  "r.rterm.mac": "/opt/homebrew/bin/R",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4o",
+  "docker.extension.enableComposeLanguageServer": false,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "please follow the conventional commits and use `prefix` and `gitmoji`"
+    },
+    {
+      "text": "if you explain in detail, you write it in bullet points after three sentences"
+    }
+  ],
+  "github.copilot.nextEditSuggestions.enabled": true
 }
