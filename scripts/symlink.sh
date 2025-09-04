@@ -15,14 +15,14 @@ for file in "$DOTDIR"/config/*/.[^.]*; do
     # create symlink
     ln -sfn "$file" "$linkname"
     # output
-    echo "create symlink: '$file' -> '$linkname'"
+    echo "✨🔗 create symlink: '$file' -> '$linkname'"
 done
 
 # vscode
 if [ -f "$DOTDIR"/config/vscode/settings.json ]; then
     # create symlink
     ln -sfn "$DOTDIR"/config/vscode/settings.json "$HOME"/Library/Application\ Support/Code/User/settings.json
-    echo "create symlink: '$DOTDIR/config/vscode/settings.json' -> '$HOME/Library/Application Support/Code/User/settings.json'"
+    echo "✨🔗 create symlink: '$DOTDIR/config/vscode/settings.json' -> '$HOME/Library/Application Support/Code/User/settings.json'"
 fi
 
 # history
@@ -37,5 +37,5 @@ for file in "$DOTDIR"/local/state/*/history; do
     # create symlink
     ln -sfn "$file" "$linkname"
     # output
-    echo "create symlink: '$file' -> '$linkname'"
+    echo "✨🔗 create symlink: '$file' -> '$linkname'"
 done

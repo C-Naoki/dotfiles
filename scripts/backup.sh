@@ -19,14 +19,14 @@ for file in "$DOTDIR"/config/*/.[^.]*; do
     # if file exists, backup
     if [ ! -L ~/"$filename" ] && [ -f ~/"$filename" ]; then
         mv ~/"$filename" "$BACKUPDIR/"$filename
-        echo "backup: ~/$filename -> $BACKUPDIR/$filename"
+        echo "💾 backup: ~/$filename -> $BACKUPDIR/$filename"
     fi
 done
 
 # vscode
 if [ ! -L "$HOME"/Library/Application\ Support/Code/User/settings.json ] && [ -f "$HOME"/Library/Application\ Support/Code/User/settings.json ]; then
     mv "$HOME"/Library/Application\ Support/Code/User/settings.json "$BACKUPDIR/settings.json"
-    echo "backup: '$HOME/Library/Application Support/Code/User/settings.json' -> '$BACKUPDIR/settings.json'"
+    echo "💾 backup: '$HOME/Library/Application Support/Code/User/settings.json' -> '$BACKUPDIR/settings.json'"
 fi
 
 # history
@@ -41,6 +41,6 @@ for file in "$DOTDIR"/local/state/*/history; do
     # if file exists, backup
     if [ ! -L ~/"$filename" ] && [ -f ~/"$filename" ]; then
         mv ~/"$filename" "$BACKUPDIR/"$filename
-        echo "backup: ~/$filename -> $BACKUPDIR/$filename"
+        echo "💾 backup: ~/$filename -> $BACKUPDIR/$filename"
     fi
 done
