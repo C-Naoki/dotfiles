@@ -49,10 +49,9 @@ if [ ! -d ${DOTDIR} ]; then
         source ../scripts/backup.sh
         source ../scripts/install-brew.sh
         source ../scripts/symlink.sh
-        sudo chsh -s /bin/zsh
     fi
     source ../scripts/display-finish.sh
 else
     echo "dotfiles already exists"
-    exit 1
+    exit 0
 fi
