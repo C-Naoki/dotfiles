@@ -49,7 +49,7 @@ if [ ! -d ${DOTDIR} ]; then
         source ../scripts/backup.sh
         source ../scripts/install-brew.sh
         source ../scripts/symlink.sh
-        cash -s /bash/zsh
+        sudo chsh -s /bin/zsh
     fi
     source ../scripts/display-finish.sh
 else
